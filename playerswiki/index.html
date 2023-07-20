@@ -1,0 +1,862 @@
+<html class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                },
+                fontFamily: {
+                    poppins: ['Poppins', 'sans-serif'],
+                    Montserrat: ['Montserrat', 'sans-serif']
+                },
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap" rel="stylesheet">
+    <title>
+        Homepage
+    </title>
+    <style>
+        input:checked~.dot {
+            transform: translateX(100%);
+            background-color: #000000;
+        }
+    </style>
+</head>
+
+<body class="dark:bg-gray-600 font-poppins">
+    <section class="py-2 bg-black dark:bg-gray-900">
+        <div class="max-w-6xl px-4 mx-auto" x-data="{open:false}">
+            <div class="flex justify-between">
+                <div class="flex ">
+                    <button class="text-gray-100" @click="open =true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-6 h-6 bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                    <button class="ml-4 text-xl font-bold capitalize text-gray-50">Playerswiki</button>
+                </div>
+                <div class="relative hidden text-gray-600 md:block">
+                    <input
+                        class="h-10 px-5 pr-16 text-sm bg-white border-2 border-gray-300 rounded-md focus:outline-none"
+                        type="search" name="search" placeholder="Search">
+                    <button type="submit" class="absolute top-0 right-0 mt-3 mr-4">
+                        <svg class="w-4 h-4 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                            viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                            xml:space="preserve" width="512px" height="512px">
+                            <path
+                                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="hidden lg:w-auto lg:space-x-12 lg:items-center lg:flex ">
+                    <li><a href="" class="text-sm text-gray-100 dark:text-gray-300 ">Home</a>
+                    </li>
+                    <li><a href="" class="text-sm text-gray-100 dark:text-gray-300 ">
+                            Bio
+                        </a>
+                    </li>
+                    <li><a href="" class="text-sm text-gray-100 dark:text-gray-300 ">News</a>
+                    </li>
+                    <li><a href="" class="text-sm text-gray-100 dark:text-gray-300 ">
+                            Video
+                        </a>
+                    </li>
+                    <li><a href="" class="text-sm text-gray-100 dark:text-gray-300 ">
+                            Profile</a>
+                    </li>
+                </ul>
+                <div class="flex ml-4">
+                    <button class="mr-4 text-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-5 h-5 bi bi-facebook" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        </svg>
+                    </button>
+                    <label for="toggleB" class="flex items-center cursor-pointer">
+                        <div class="relative">
+                            <input type="checkbox" id="toggleB" class="sr-only">
+                            <div class="block w-10 h-6 bg-gray-100 rounded-full"></div>
+                            <div class="absolute w-4 h-4 transition bg-gray-500 rounded-full dot left-1 top-1">
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <!-- Mobile Sidebar -->
+            <div class="fixed inset-0 w-full bg-gray-800 opacity-50 dark:bg-gray-500 "
+                :class="{'translate-x-0 ease-in-opacity-100' :open===true, '-translate-x-full ease-out opacity-0' : open===false}">
+            </div>
+            <div class="absolute inset-0 z-10 h-screen p-3 text-gray-400 duration-500 transform bg-gray-50 dark:bg-gray-800 w-80 lg:w-96 lg:block "
+                :class="{'translate-x-0 ease-in-opacity-100' :open===true, '-translate-x-full ease-out opacity-0' : open===false}">
+                <div class="px-4">
+                    <div class="flex justify-between ">
+                        <a class="py-2 text-2xl font-bold text-gray-600 dark:text-gray-400 " href="#">PlayersWiki</a>
+                        <button class="p-2 text-gray-700 rounded-md hover:text-blue-500 lg:block" @click="open=false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-x-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="text-left mt-7">
+                        <li class="pb-4">
+                            <a href="" class="text-base text-gray-600 hover:text-blue-400 dark:text-gray-400">Home</a>
+                        </li>
+                        <li class="pb-4">
+                            <a href="" class="text-base text-gray-600 hover:text-blue-400 dark:text-gray-400">Transfer
+                                Rumors</a>
+                        </li>
+                        <li class="pb-4">
+                            <a href="" class="text-base text-gray-600 hover:text-blue-400 dark:text-gray-400">Scouting
+                                Network</a>
+                        </li>
+                        <li class="pb-4">
+                            <a href="" class="text-base text-gray-600 hover:text-blue-400 dark:text-gray-400">Video </a>
+                        </li>
+                        <li class="pb-4">
+                            <a href="" class="text-base text-gray-600 hover:text-blue-400 dark:text-gray-400">Wags</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-6 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-6xl px-0 mx-auto lg:px-4">
+            <ul class="flex items-center w-auto overflow-x-scroll lg:overflow-auto">
+                <li
+                    class="flex items-center px-4 py-2 mb-4 ml-4 font-medium bg-white rounded-md dark:bg-gray-700 md:mb-0 hover:shadow-xl">
+                    <span class="text-gray-700 dark:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-4 h-4 bi bi-dribbble" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 0C3.584 0 0 3.584 0 8s3.584 8 8 8c4.408 0 8-3.584 8-8s-3.592-8-8-8zm5.284 3.688a6.802 6.802 0 0 1 1.545 4.251c-.226-.043-2.482-.503-4.755-.217-.052-.112-.096-.234-.148-.355-.139-.33-.295-.668-.451-.99 2.516-1.023 3.662-2.498 3.81-2.69zM8 1.18c1.735 0 3.323.65 4.53 1.718-.122.174-1.155 1.553-3.584 2.464-1.12-2.056-2.36-3.74-2.551-4A6.95 6.95 0 0 1 8 1.18zm-2.907.642A43.123 43.123 0 0 1 7.627 5.77c-3.193.85-6.013.833-6.317.833a6.865 6.865 0 0 1 3.783-4.78zM1.163 8.01V7.8c.295.01 3.61.053 7.02-.971.199.381.381.772.555 1.162l-.27.078c-3.522 1.137-5.396 4.243-5.553 4.504a6.817 6.817 0 0 1-1.752-4.564zM8 14.837a6.785 6.785 0 0 1-4.19-1.44c.12-.252 1.509-2.924 5.361-4.269.018-.009.026-.009.044-.017a28.246 28.246 0 0 1 1.457 5.18A6.722 6.722 0 0 1 8 14.837zm3.81-1.171c-.07-.417-.435-2.412-1.328-4.868 2.143-.338 4.017.217 4.251.295a6.774 6.774 0 0 1-2.924 4.573z" />
+                        </svg> </span>
+                    <a href="#" class="ml-2 text-sm text-gray-700 dark:text-gray-300 ">
+                        Football</a>
+                </li>
+                <li
+                    class="flex items-center px-4 py-2 mb-4 ml-4 font-medium bg-white rounded-md dark:bg-gray-700 md:mb-0 hover:shadow-xl">
+                    <span class="text-gray-700 dark:text-gray-300">
+                        <!-- <svg height="512px" class="w-4 h-4 " style="enable-background:new 0 0 512 512;" version="1.1"
+                            viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="_x31_003_x2C__Australia_x2C__ball_x2C__bat_x2C__cricket_x2C__sport">
+                                <g id="XMLID_510_">
+                                    <path
+                                        d="M89.425,350.087c-3.521,3.52-5.459,8.2-5.459,13.18c0,4.979,1.938,9.659,5.459,13.179l46.129,46.131    c3.521,3.521,8.201,5.459,13.18,5.459c4.979,0,9.66-1.938,13.18-5.459l184.518-184.519l-72.489-72.489L89.425,350.087z     M298.76,244.647L152.262,391.146c-0.874,0.874-2.059,1.365-3.295,1.365c-1.236,0-2.421-0.491-3.295-1.365l-26.359-26.359    c-1.82-1.819-1.82-4.771,0-6.59l146.499-146.499c0.874-0.874,2.059-1.365,3.295-1.365s2.421,0.491,3.295,1.365l26.359,26.359    C300.58,239.877,300.58,242.828,298.76,244.647z"
+                                        id="XMLID_511_" />
+                                    <path
+                                        d="M139.78,187.613c28.264,0,51.258-22.994,51.258-51.258s-22.994-51.257-51.258-51.257    s-51.258,22.993-51.258,51.257S111.516,187.613,139.78,187.613z"
+                                        id="XMLID_514_" />
+                                    <rect height="197.861" id="XMLID_515_"
+                                        transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 143.7092 662.371)"
+                                        width="27.958" x="195.057" y="202.492" />
+                                    <rect height="134.044" id="XMLID_516_"
+                                        transform="matrix(0.7071 0.7071 -0.7071 0.7071 211.2007 -214.2097)"
+                                        width="46.598" x="340.87" y="80.81" />
+                                </g>
+                            </g>
+                            <g id="Layer_1" />
+                        </svg> -->
+                        <img src="https://i.postimg.cc/Y9dWJXQG/bat-removebg-preview.png" alt=""
+                            class="object-cover w-4 h-4">
+                    </span>
+                    <a href="#" class="ml-2 text-sm text-gray-700 dark:text-gray-300 ">
+                        Cricket</a>
+                </li>
+                <li
+                    class="flex items-center px-4 py-2 mb-4 ml-4 font-medium bg-white rounded-md dark:bg-gray-700 md:mb-0 hover:shadow-xl">
+                    <span class="text-gray-700 dark:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-controller" viewBox="0 0 16 16">
+                            <path
+                                d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z" />
+                            <path
+                                d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729c.14.09.266.19.373.297.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466.206.875.34 1.78.364 2.606.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527-1.627 0-2.496.723-3.224 1.527-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.34 2.34 0 0 1 .433-.335.504.504 0 0 1-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a13.748 13.748 0 0 0-.748 2.295 12.351 12.351 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.354 12.354 0 0 0-.339-2.406 13.753 13.753 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27-1.036 0-2.063.091-2.913.27z" />
+                        </svg>
+                    </span>
+                    <a href="#" class="ml-2 text-sm text-gray-700 dark:text-gray-300 ">
+                        Gaming</a>
+                </li>
+                <li
+                    class="flex items-center px-4 py-2 mb-4 ml-4 font-medium bg-white rounded-md dark:bg-gray-700 md:mb-0 hover:shadow-xl">
+                    <span>
+                        <?xml version="1.0" ?><svg viewBox="0 0 64 64" class="w-4 h-4"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title />
+                            <g data-name="Day 30" id="d560eaf6-3208-47b8-90fe-4e2d8c08e231">
+                                <path
+                                    d="M60,29v9H57.83a3.3,3.3,0,0,1-3.11-4.38L47,33.07V42L39,59H25L17,42V33.07l-7.72.55A3.3,3.3,0,0,1,6.17,38H4V29l13-4.64V5H47V24.36Z"
+                                    data-name="&lt;Path&gt;" fill="#eff3f7" id="0d7f1ae0-cfd9-4df0-8b07-8e381f8118bb" />
+                                <path d="M24,35v7.39A6.74,6.74,0,0,1,21,48h0" data-name="&lt;Path&gt;" fill="none"
+                                    id="bae7ee9d-601d-4186-9dce-bf1088771807" stroke="#da1c49" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" />
+                                <path d="M60,29v9H57.83a3.3,3.3,0,0,1-3.11-4.38L47,33.07V42L39,59H32V5H47V24.36Z"
+                                    data-name="&lt;Path&gt;" fill="#c9d4db" id="8d607d7c-e0ef-4d92-a103-9b1e5ef5a6cf" />
+                                <path d="M41,35v7.39A6.74,6.74,0,0,0,44,48h0" data-name="&lt;Path&gt;" fill="none"
+                                    id="a6c75065-d3b2-41cb-b372-d5fce32ea5ae" stroke="#da1c49" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" />
+                                <path
+                                    d="M18,30.38V33l-1,1.67v-1.6l-7.72.55A3.3,3.3,0,0,1,6.17,38H4V33.25l11.77-4.41A1.65,1.65,0,0,1,18,30.38Z"
+                                    data-name="&lt;Path&gt;" fill="#adb0b3" id="b762a6f9-30c0-4f89-928c-07785a328b45" />
+                                <path
+                                    d="M46,30.38V33l1,1.67v-1.6l7.72.55A3.3,3.3,0,0,0,57.83,38H60V33.25L48.23,28.84A1.65,1.65,0,0,0,46,30.38Z"
+                                    data-name="&lt;Path&gt;" fill="#adb0b3" id="9c35034e-71c1-4cd6-848d-e7e1d30f9ea6" />
+                                <polyline data-name="&lt;Path&gt;" fill="none" id="bcbf40fb-a8ba-40d0-b03f-bf871e51f45c"
+                                    points="34 15 31 15 31 19 33.75 22 37 18.5 37 11 27 11 27 22 32 26 32 59"
+                                    stroke="#da1c49" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                <path
+                                    d="M47,24.36V5H17V24.36L4,29v9H6.17a3.3,3.3,0,0,0,3.12-4.38L17,33.07V42l8,17H39l8-17V33.07l7.72.55A3.3,3.3,0,0,0,57.83,38H60V29Z"
+                                    data-name="&lt;Path&gt;" fill="none" id="793058db-eea1-41f0-a0e0-89fe56c69485"
+                                    stroke="#001c63" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                <circle cx="24" cy="31" data-name="&lt;Path&gt;" fill="none"
+                                    id="232b9652-4643-447f-8b28-af59d85b3f4e" r="3" stroke="#001c63"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                <circle cx="41" cy="31" data-name="&lt;Path&gt;" fill="none"
+                                    id="f837101c-306d-48b0-b88f-a83ae04b5151" r="3" stroke="#001c63"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                <polygon data-name="&lt;Path&gt;" fill="#c9d4db"
+                                    id="5ec9a8f5-f971-49b0-b8a1-3a566706e3b9" points="20 6 20 22 22 14 22 6 20 6" />
+                            </g>
+                        </svg>
+                    </span>
+                    <a href="#" class="ml-2 text-sm text-gray-700 dark:text-gray-300 ">
+                        Freefire</a>
+                </li>
+                <li
+                    class="flex items-center px-4 py-2 mb-4 ml-4 font-medium bg-white rounded-md dark:bg-gray-700 md:mb-0 hover:shadow-xl">
+                    <span class="dark:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-4 h-4 bi bi-dribbble" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 0C3.584 0 0 3.584 0 8s3.584 8 8 8c4.408 0 8-3.584 8-8s-3.592-8-8-8zm5.284 3.688a6.802 6.802 0 0 1 1.545 4.251c-.226-.043-2.482-.503-4.755-.217-.052-.112-.096-.234-.148-.355-.139-.33-.295-.668-.451-.99 2.516-1.023 3.662-2.498 3.81-2.69zM8 1.18c1.735 0 3.323.65 4.53 1.718-.122.174-1.155 1.553-3.584 2.464-1.12-2.056-2.36-3.74-2.551-4A6.95 6.95 0 0 1 8 1.18zm-2.907.642A43.123 43.123 0 0 1 7.627 5.77c-3.193.85-6.013.833-6.317.833a6.865 6.865 0 0 1 3.783-4.78zM1.163 8.01V7.8c.295.01 3.61.053 7.02-.971.199.381.381.772.555 1.162l-.27.078c-3.522 1.137-5.396 4.243-5.553 4.504a6.817 6.817 0 0 1-1.752-4.564zM8 14.837a6.785 6.785 0 0 1-4.19-1.44c.12-.252 1.509-2.924 5.361-4.269.018-.009.026-.009.044-.017a28.246 28.246 0 0 1 1.457 5.18A6.722 6.722 0 0 1 8 14.837zm3.81-1.171c-.07-.417-.435-2.412-1.328-4.868 2.143-.338 4.017.217 4.251.295a6.774 6.774 0 0 1-2.924 4.573z" />
+                        </svg>
+                    </span>
+                    <a href="#" class="ml-2 text-sm text-gray-700 dark:text-gray-300 ">
+                        Soccer</a>
+                </li>
+                <li
+                    class="flex items-center px-4 py-2 mb-4 ml-4 font-medium bg-white rounded-md dark:bg-gray-700 md:mb-0 hover:shadow-xl">
+                    <span class="dark:text-gray-300">
+                        <svg id="a" class="w-4 h-4 dark:fill-white " viewBox="0 0 750 750"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M563.51,212.34c-.05-8.31-6.33-21.47-10.29-27.35-5.69-7.37-13.34-13.53-22.35-16.21-20.6-5.7-44.04-3.13-62.35,8.13-2.55,1.69-4.95,3.93-6.9,6.5-5.81-7.68-15.08-11.5-23.76-15.05-20.57-6.47-50.3-2.25-64.67,14.96-.11-.13-.21-.26-.32-.38-3.93-5.07-7.78-10.65-13.97-13.12-13.77-5.31-30.75-2.7-45.08-.72-9.18,1.8-18.5,4.75-25.82,10.81-1.54,1.39-3.04,2.89-4.46,4.49-4.01-6.5-10.3-11.44-17.95-13.13-22.68-4.27-48.34,.59-65.05,17.31-5.8,5.34-11.95,13.67-12.13,21.88-1.1,1.68-1.81,3.68-1.91,5.74-1.01,6.98,4.16,12.61,6.35,18.88,5.28,12.78,9.73,25.89,14.66,38.81,8.3,20.25,17.58,41.5,25.8,62.48,10.65,23.9,23.74,46.56,37.22,68.95,8.25,14.43,14.79,29.86,23.41,44.06-.51,.62-.96,1.34-1.32,2.18-1.08,2.16-1.57,4.74-1.46,7.29-2.35,2-4.03,5.41-4.08,10.05,.26,25.57-5.54,54.1,8.83,76.96,7.04,11.21,17.83,19.1,29.47,25.05,10.99,6.2,22.64,12.02,35.37,13.27,18.4,1.85,40.06-4.18,56.51-12.33,18.3-8.88,29.85-26.41,34.03-45.98,3.43-13.26,4.65-27.03,4.6-40.69-.58-7.91,1.53-20.33-3.23-27.15,5.7-9.65,9.97-23.8,12.58-28.86,7.01-15.73,13.37-31.7,19.55-47.77,8.14-19.55,18.91-37.85,27.51-57.18,8.57-21.77,18.69-42.8,29.39-63.59,5.34-11.37,11.64-22.25,17.3-33.47,2.32-4.64,5.25-9.53,4.5-14.83Zm-179.54-7.59c4.13-5.76,10.67-9.02,17.25-11.2,10.15-2.24,21.02-4.11,31.26-1.52,5.87,2.38,13.13,3.93,17.05,9.26,2.18,3.27,3.44,7.81,5.87,11.05-.74,7.43-1.85,14.83-3.05,22.19-3.91,23.21-11.65,45.6-15.24,68.87-3.26,18.11-4.42,36.49-6.64,54.74-2.01,16.82-5.56,33.37-10.13,49.67-2.66,10.27-5.53,20.48-7.98,30.8-.66,2.62-.43,5.85,.74,8.54-2.55,.09-5.1,.18-7.65,.27-7.93,.28-15.86,.38-23.79,.37,.23-1,.38-2.09,.4-3.28-.25-17.68-1.64-35.78-1.38-53.61,.25-22.52,2.13-44.99,2.2-67.52-.1-17.7-1.32-35.38-1.3-53.09-.23-20.37,1.57-41.06-.37-61.37,.07-.12,.16-.22,.22-.34,.8-1.31,1.65-2.58,2.54-3.82Zm-72.75-9.07c12.07-3.1,24.64-4.71,37.1-4.16,6.13,.01,9.43,4.93,12.69,9.37,.24,.23,.49,.42,.73,.62,1,23.36,.52,46.84,1.11,70.25,1.16,20.86,1.82,41.71,2.18,62.6,.68,17.76,1.76,35.5,2.12,53.27,.48,19.03-1.09,37.83-1.34,56.87,.03,1.13,.17,2.17,.37,3.12-7.44-.14-14.87-.35-22.31-.59-6.05-29.76-18.9-59.03-23.51-89.36-3.14-25.58-9.47-50.6-12.33-76.22-2.01-20.95-8.83-40.89-12.76-61.47-.64-4.04-1.61-7.27-2.78-9.83,.01-.33,0-.66,0-1,3.34-7.37,11.2-11.31,18.73-13.48Zm-49.17,162.55c-11.93-31.83-25.52-63.03-37.21-94.94-4.35-12.75-8.62-25.54-13.85-37.96-1.45-3.15-2.84-6.41-4.5-9.5,.28-.57,.54-1.16,.77-1.76,12.77-15.39,33.43-20.77,52.77-19.21,4.26,.45,8.94,2.1,10.44,6.5,.99,2.16,1.97,5.25,3.14,8.33,.02,.23,.02,.46,.05,.69,.14,1.29,.4,2.45,.76,3.5-.05,1.31,.04,2.7,.31,4.16,1.45,5.24,2.31,10.6,3.24,15.95,2.05,11.77,6.01,23.08,8.56,34.74,5.22,26.45,8.69,53.22,14.58,79.55,2.67,14.05,7.36,27.56,11.85,41.1,5.75,18.79,11.49,37.65,14.45,57.1-3.4-.11-6.8-.22-10.2-.32-.47,.03-.96,.04-1.46,.04-.35-.97-.8-1.89-1.38-2.7-3.52-4.99-6.89-10.07-10.45-15.02-7.54-10.49-14.88-21.12-21.46-32.24-7.64-12.2-14.97-24.64-20.41-38.01Zm170.55,160.56c.43,24.8-17.63,39.85-40.77,43.75-15.25,3.55-31.07,1.25-44.87-6.07-11.62-6.51-25.35-10.92-33.63-21.92-5.04-6.05-7.02-13.66-7.32-21.41-.73-14,.74-28.06-.12-42.05,7.3,.68,14.66,.88,21.99,1.23,25.14,.68,50.29-.4,75.42-1.1,9.87-.11,19.73-.46,29.59-.85-.11,3.47,.09,6.92,.15,9.78,.32,12.89,.19,25.77-.43,38.64Zm69.1-218.31c-13.69,29.6-24.25,60.45-35.96,90.85-7,16.77-17.8,31.53-26.37,47.48-1.93,2.5-3.77,5.02-5.16,7.57-2.3,.09-4.6,.17-6.91,.25,1.64-3.88,2.26-8.9,3.05-12.28,2.35-13.55,4.65-27.1,7.72-40.51,6.8-29.54,13.3-59.18,17.23-89.26,3.67-19.27,10.6-37.77,14.61-56.98,2.4-12.02,4.34-24.21,4.98-36.46,.02-2.79,.15-6.26-.19-9.6,.37-.39,.79-.72,1.21-1.06,8.55-5.12,18.33-7.77,28.19-8.77,13.65-1.23,31.62-.71,38.21,13.6,.9,1.66,1.53,3.57,2.12,5.52-16.9,28.47-30.04,59.1-42.73,89.64Z" />
+                        </svg>
+                    </span>
+                    <a href="#" class="ml-2 text-sm text-gray-700 dark:text-gray-300 ">
+                        Badminton</a>
+                </li>
+                <li
+                    class="flex items-center px-4 py-2 mb-4 ml-4 font-medium bg-white rounded-md dark:bg-gray-700 md:mb-0 hover:shadow-xl">
+                    <span class="dark:text-gray-300">
+                        <svg class="w-4 h-4 dark:fill-white " enable-background="new 0 0 32 32" height="32px"
+                            id="Layer_1" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <polyline fill="none" points="   649,137.999 675,137.999 675,155.999 661,155.999  "
+                                    stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-miterlimit="10" stroke-width="2" />
+                                <polyline fill="none" points="   653,155.999 649,155.999 649,141.999  " stroke="#FFFFFF"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                    stroke-width="2" />
+                                <polyline fill="none" points="   661,156 653,162 653,156  " stroke="#FFFFFF"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                    stroke-width="2" />
+                            </g>
+                            <path
+                                d="M27.02,7.383c0-0.001-0.001-0.001-0.002-0.001C24.34,3.962,20.324,2,16,2C11.675,2,7.659,3.962,4.979,7.383  c-0.283,0.362-0.283,0.871,0,1.233C7.659,12.038,11.675,14,16,14c3.88,0,7.503-1.589,10.143-4.385C27.357,11.529,28,13.711,28,16  c0,2.288-0.643,4.471-1.857,6.385C23.503,19.589,19.88,18,16,18c-3.879,0-7.502,1.589-10.143,4.385C4.643,20.471,4,18.289,4,16  c0-1.249,0.197-2.491,0.585-3.692c0.17-0.525-0.119-1.089-0.644-1.259c-0.526-0.169-1.089,0.119-1.259,0.644  C2.229,13.092,2,14.542,2,16c0,3.147,1.03,6.127,2.979,8.616c0,0.001,0.001,0.001,0.002,0.001C7.66,28.038,11.676,30,16,30  c4.325,0,8.342-1.962,11.02-5.384C28.97,22.127,30,19.147,30,16S28.97,9.873,27.02,7.383z M16,12c-3.438,0-6.649-1.448-8.93-4  c2.28-2.552,5.492-4,8.93-4c3.438,0,6.649,1.448,8.93,4C22.649,10.552,19.438,12,16,12z M16,28c-3.438,0-6.649-1.448-8.93-4  c2.281-2.552,5.492-4,8.93-4c3.438,0,6.649,1.448,8.93,4C22.649,26.552,19.438,28,16,28z" />
+                        </svg>
+                    </span>
+                    <a href="#" class="ml-2 text-sm text-gray-700 dark:text-gray-300 ">
+                        Tennis</a>
+                </li>
+                <li
+                    class="flex items-center px-4 py-2 mb-4 ml-4 font-medium bg-white rounded-md dark:bg-gray-700 md:mb-0 hover:shadow-xl">
+                    <span>
+                        <svg id="Layer_1" class="w-4 h-4 dark:fill-white" style="enable-background:new 0 0 91 91;"
+                            version="1.1" viewBox="0 0 91 91" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <g>
+                                    <path class="st0"
+                                        d="M18.5,26.1c7.3,2.3,16.1-1.1,21-6.7c2.3-2.7,4-6.1,3.3-9.7c-0.6-3.2-2.7-6.7-6.1-7.3c-0.9-0.2-1.6,0-2.2,0.4    c-2.1-0.3-4.6,0.3-6.4,0.8c-3.8,1.1-7.2,3.2-10.2,5.8c-2.7,2.4-5.1,5.5-5.1,9.2C12.8,22.2,15.1,25.1,18.5,26.1z M25.5,10.7    c1.9-1.1,4-2,6.1-2.6C32.3,8,33,7.9,33.7,7.8C34,8.1,34.5,8.3,35,8.4c2.1,0.4,1.9,3.6,1.4,5c-0.8,1.8-2.5,3.4-4.2,4.6    c-3,2.1-8.6,4.3-12.2,2.6C14.8,18.2,23.3,12,25.5,10.7z" />
+                                    <path class="st0"
+                                        d="M72.7,26.1c3.2-1,5.5-3.6,5.7-7c0.2-4-2.3-7.2-5.1-9.7c-3-2.6-6.4-4.6-10.2-5.8c-1.8-0.5-4.3-1.1-6.4-0.8    c-0.6-0.4-1.3-0.5-2.2-0.4c-3.4,0.6-5.5,4.1-6.1,7.3c-0.7,3.6,1,7,3.3,9.7C56.6,25,65.5,28.4,72.7,26.1z M65.7,10.7    c2.1,1.2,10.8,7.6,5.4,9.9C67.4,22.2,62,20.2,59,18c-1.6-1.2-3.3-2.7-4.2-4.6c-0.6-1.4-0.7-4.7,1.4-5c0.6-0.1,1-0.3,1.3-0.6    c0.7,0.1,1.4,0.2,2.1,0.3C61.8,8.7,63.8,9.6,65.7,10.7z" />
+                                    <path class="st0"
+                                        d="M44.2,27.9c-1.1,0-1.8,0.6-2.3,1.3c-0.2,0-0.5,0.1-0.8,0.2c-2,0.6-3.7,1.8-5,3.4c-3.1,3.7-4,8.6-3.6,13.3    c0.5,5.8,1.6,11.6,2.4,17.4c0.8,5.6,1.4,11.3,2.6,16.8c0.7,3.6,2.8,7.8,7,7.7c4.4-0.1,7.3-4.4,8.8-8.1c1.8-4.5,2.3-9.5,2.4-14.3    c0.2-6,0.5-11.7,1.7-17.6c1-5.2,1.3-11-1.9-15.5C52.9,28.8,48.6,27.8,44.2,27.9z M50.9,53.9c-0.6,5-0.3,10.1-0.7,15.2    c-0.2,2.5-0.5,5-1.3,7.3c-0.5,1.6-1.9,5.5-3.9,5.8c-1.5,0.2-1.7-2.5-1.9-3.8c-0.4-2.5-0.7-5-1-7.5c-0.8-5.2-1.6-10.4-2.4-15.5    c-0.8-5-2.3-10.5-1.1-15.5c0.6-2.3,1.7-4.4,3.7-5.7c0.3-0.2,0.7-0.5,1-0.7c0.3,0.1,0.6,0.1,0.9,0.1c4.3-0.6,7.5,1.1,8.4,5.7    C53.6,44.1,51.5,49.1,50.9,53.9z" />
+                                    <path class="st0"
+                                        d="M83.8,28.3c-0.2-0.7-0.9-1-1.6-0.9c-2.1,0.3-3.2,2.4-4.3,4c-1.5,2.2-3.1,4.4-4.8,6.5c-3.3,4-6.5,8.1-8.4,13    c-2,5.2-2.7,10.8-3.1,16.3c-0.2,3.1-0.3,6.2-0.5,9.3c-0.2,3.1-0.8,6.2-0.7,9.3c0.1,3.7,5.3,4.4,6.4,0.9c1.7-5.3,1-11.7,1-17.1    c0-5.7,0.3-11.3,2.1-16.7c1.7-4.9,5-8.9,8.1-13C80.1,37.3,85,31.9,83.8,28.3z" />
+                                    <path class="st0"
+                                        d="M29.8,69.6c-0.6-5.2-1.4-10.4-2.9-15.5c-3-10.4-8.7-20.2-16.9-27.4c-1.2-1.1-3.1,0.3-2.3,1.8    c2.6,4.7,5.9,9,8.3,13.8c2.3,4.6,3.8,9.5,4.8,14.6c1,4.9,1.4,9.9,1.5,14.9c0.2,4.8-0.9,10.7,1,15.1c1.4,3.3,5.9,1.7,6.9-0.9    c1-2.7,0.3-5.9,0.1-8.7C30.3,74.7,30.1,72.1,29.8,69.6z" />
+                                </g>
+                            </g>
+                        </svg>
+
+                    </span>
+                    <a href="#" class="ml-2 text-sm text-gray-700 dark:text-gray-300 ">
+                        Anime</a>
+                </li>
+                <li class="mb-4 ml-4 mr-4 md:mb-0">
+                    <a href="#"
+                        class="flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 ">
+                        More
+                        <span class="ml-2"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="w-3 h-3 bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                            </svg> </span></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="py-6 dark:bg-gray-900">
+        <div class="max-w-6xl px-4 mx-auto lg:px-2">
+            <div class="px-4 mb-6">
+                <a href="#" class="">
+                    <img src="https://i.postimg.cc/nhhJKVL4/3183295328866199212.png" alt="" class="object-cover w-full">
+                </a>
+            </div>
+            <div class="flex flex-wrap items-center lg:items-start">
+                <div class="w-full px-2 lg:w-3/5">
+                    <div class="relative mb-6 overflow-hidden rounded-md shadow-md md:mb-0 group">
+                        <img src="https://i.postimg.cc/Jz56xFf6/mlb-top-10-center-fielders-in-2022-1656557189.jpg"
+                            class=" h-[420px] w-full  object-cover" alt="">
+                        <div class="absolute inset-0 h-[420px] bg-black opacity-50 transition duration-500 z-0">
+                        </div>
+                        <div>
+                            <div class="absolute block bottom-4 left-4">
+                                <button
+                                    class="w-auto px-4 py-1 mb-2 text-sm font-medium text-white transition-colors duration-200 transform bg-blue-500 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                    News</button>
+                                <h1 class="mb-2 text-lg font-semibold tracking-wide text-white hover:text-blue-300 ">
+                                    <a href="#">
+                                        MLB: Top 10 Center
+                                        Fielders
+                                        in
+                                        2022</a>
+                                </h1>
+                                <div class="flex flex-wrap items-center">
+                                    <a href="#" class="flex items-center mr-6 text-gray-200 no-underline ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-200 ">
+                                            Admin</span>
+                                    </a>
+                                    <a href="#" class="flex items-center mr-6 text-gray-200 no-underline ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-200 ">May
+                                            10, 2022</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-2 lg:flex-1">
+                    <div class="flex w-full mb-4 ">
+                        <div>
+                            <img class="object-cover w-32 h-32 mr-4 rounded"
+                                src="https://i.postimg.cc/FKmR5YnF/khamzat-chimaev-vs-leon-edwards-fight-analysis-callouts.jpg"
+                                alt="">
+                        </div>
+                        <div class="flex-1 mb-5">
+                            <h2
+                                class="mb-4 text-base font-semibold tracking-tight text-gray-700 hover:text-blue-600 dark:text-gray-400">
+                                <a href="singlepage.html">
+                                    Kirby Smart and his Wife Mary Beth Lycett Married since 2006
+                                </a>
+                            </h2>
+                            <div class="flex flex-wrap items-center">
+                                <a href="#"
+                                    class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg>
+                                    <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                        Admin</span>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">May
+                                        10, 2022</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex w-full mb-4 ">
+                        <div>
+                            <img class="object-cover w-32 h-32 mr-4 rounded"
+                                src="https://i.postimg.cc/brqWqhft/10-mma-players-who-can-be-big-star-in-future-maycee-kaye-barber-others.jpg"
+                                alt="">
+                        </div>
+                        <div class="flex-1 mb-5">
+                            <h2
+                                class="mb-4 text-base font-semibold tracking-tight text-gray-700 hover:text-blue-600 dark:text-gray-400">
+                                <a href="#">
+                                    Nets’ A. Coach David Vanterpool Fined by NBA; What’s his Net worth and
+                                    Salary?</a>
+                            </h2>
+                            <div class="flex flex-wrap items-center">
+                                <a href="#"
+                                    class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg>
+                                    <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">
+                                        Admin</span>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">May
+                                        10, 2022</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex w-full mb-6 md:mb-0 ">
+                        <div>
+                            <img class="object-cover w-32 h-32 mr-4 rounded"
+                                src="https://i.postimg.cc/hPP6wcrF/khamzat-chimaev-highlights-training-workouts-bio-knockouts.jpg"
+                                alt="">
+                        </div>
+                        <div class="flex-1 mb-5">
+                            <h2
+                                class="mb-4 text-base font-semibold tracking-tight text-gray-700 hover:text-blue-600 dark:text-gray-400">
+                                <a href="#">
+                                    Paqui Kelly Married Life, Brian Kelly's wife MLB: Top 10 Center Fielders in
+                                    2022
+                                </a>
+                            </h2>
+                            <div class="flex flex-wrap items-center">
+                                <a href="#"
+                                    class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg>
+                                    <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">
+                                        Admin</span>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">May
+                                        10, 2022</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-6 bg-white dark:bg-gray-900">
+        <div class="max-w-6xl px-4 mx-auto">
+            <div class="mb-6">
+                <a href="#" class="">
+                    <img src="https://i.postimg.cc/v80bS661/CC220606-1014-T3-Campaign-International-PROSPECTING-728x90.gif"
+                        alt="" class="object-cover w-full">
+                </a>
+            </div>
+            <h2 class="pl-2 mb-6 text-gray-700 border-l-4 border-blue-500 dark:text-gray-400 ">Profile</h2>
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 md:grid-cols-2">
+                <div class="mb-0 overflow-hidden bg-white rounded shadow dark:bg-gray-700" href="#">
+                    <div class="relative overflow-hidden h-96">
+                        <img class="object-cover w-full h-full rounded-md"
+                            src="https://i.postimg.cc/y6r2wTtj/damion-1662573606.jpg" alt="">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 z-20 py-6 px-4 -mt-12 bg-gradient-to-t from-black via-black to-[#b2aeae57]">
+                            <h2 class="mb-4 text-2xl font-bold leading-9 text-white dark:text-white">
+                                Damion Lowe
+                            </h2>
+                            <div class="flex items-center justify-between pb-4 ">
+                                <div class="text-sm font-medium text-gray-100">Profession:</div>
+                                <div class="text-sm font-medium text-gray-100 ">Footballer </div>
+                            </div>
+                            <div class="flex items-center justify-between pb-2">
+                                <div class="text-sm font-medium text-gray-100">Age:</div>
+                                <div class="text-sm font-medium text-gray-100 ">34 yearss </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-0 overflow-hidden bg-white rounded shadow dark:bg-gray-700" href="#">
+                    <div class="relative overflow-hidden h-96">
+                        <img class="object-cover w-full h-full rounded-md"
+                            src="https://i.postimg.cc/13DTV1t7/david-vanterpool-1642931348.jpg" alt="">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 z-20 py-6 px-4 -mt-12 bg-gradient-to-t from-black via-black to-[#b2aeae57]">
+                            <h2 class="mb-4 text-2xl font-bold leading-9 text-white dark:text-white">
+                                Raul de Toma
+                            </h2>
+                            <div class="flex items-center justify-between pb-4 ">
+                                <div class="text-sm font-medium text-gray-100">Profession:</div>
+                                <div class="text-sm font-medium text-gray-100 ">Footballer </div>
+                            </div>
+                            <div class="flex items-center justify-between pb-2">
+                                <div class="text-sm font-medium text-gray-100">Age:</div>
+                                <div class="text-sm font-medium text-gray-100 ">34 yearss </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-0 overflow-hidden bg-white rounded shadow dark:bg-gray-700" href="#">
+                    <div class="relative overflow-hidden h-96">
+                        <img class="object-cover w-full h-full rounded-md"
+                            src="https://i.postimg.cc/J4kYSCb7/tyreek-anthony-magee-1662813434.jpg" alt="">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 z-20 py-6 px-4 -mt-12 bg-gradient-to-t from-black via-black to-[#b2aeae57]">
+                            <h2 class="mb-4 text-2xl font-bold leading-9 text-white dark:text-white">
+                                Tyreek Magee
+                            </h2>
+                            <div class="flex items-center justify-between pb-4 ">
+                                <div class="text-sm font-medium text-gray-100">Profession:</div>
+                                <div class="text-sm font-medium text-gray-100 ">Footballer </div>
+                            </div>
+                            <div class="flex items-center justify-between pb-2">
+                                <div class="text-sm font-medium text-gray-100">Age:</div>
+                                <div class="text-sm font-medium text-gray-100 ">34 yearss </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-0 overflow-hidden bg-white rounded shadow dark:bg-gray-700" href="#">
+                    <div class="relative overflow-hidden h-96">
+                        <img class="object-cover w-full h-full rounded-md"
+                            src="https://i.postimg.cc/N0fW3PsN/jaime-1662743440.jpg" alt="">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 z-20 py-6 px-4 -mt-12 bg-gradient-to-t from-black via-black to-[#b2aeae57]">
+                            <h2 class="mb-4 text-2xl font-bold leading-9 text-white dark:text-white">
+                                Jaime Ayoví
+                            </h2>
+                            <div class="flex items-center justify-between pb-4 ">
+                                <div class="text-sm font-medium text-gray-100">Profession:</div>
+                                <div class="text-sm font-medium text-gray-100 ">Footballer </div>
+                            </div>
+                            <div class="flex items-center justify-between pb-2">
+                                <div class="text-sm font-medium text-gray-100">Age:</div>
+                                <div class="text-sm font-medium text-gray-100 ">34 yearss </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 dark:bg-gray-900">
+        <div class="max-w-6xl px-4 mx-auto lg:px-2">
+            <div class="grid grid-cols-1 mb-6 md:grid-cols-[60%,1fr]  gap-4">
+                <div>
+                    <h2 class="pl-2 mb-6 text-lg text-gray-700 border-l-4 border-blue-500 dark:text-gray-400">Latest
+                        news</h2>
+                    <div class="mb-4">
+                        <div class="grid grid-cols-1 mb-6 md:grid-cols-[1fr,70%]  gap-4">
+                            <div>
+                                <img src="https://i.postimg.cc/FKmR5YnF/khamzat-chimaev-vs-leon-edwards-fight-analysis-callouts.jpg"
+                                    alt="" class="object-cover w-full rounded-md h-80 md:h-44">
+                            </div>
+                            <div>
+                                <a href="#" class="text-xs font-medium text-blue-600 dark:text-blue-400 ">
+                                    MMA
+                                </a>
+                                <h2 class="mt-1 mb-3 text-lg font-semibold text-gray-600 dark:text-gray-400 ">
+                                    Khamzat Chimaev vs. Leon Edwards Fight Analysis, Callouts</h2>
+                                <div class="flex flex-wrap items-center">
+                                    <a href="#"
+                                        class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">
+                                            Admin</span>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">May
+                                            10, 2022</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="grid grid-cols-1 mb-6 md:grid-cols-[1fr,70%]  gap-4">
+                            <div>
+                                <img src="https://i.postimg.cc/brqWqhft/10-mma-players-who-can-be-big-star-in-future-maycee-kaye-barber-others.jpg"
+                                    alt="" class="object-cover w-full rounded-md h-80 md:h-44">
+                            </div>
+                            <div>
+                                <a href="#" class="text-xs font-medium text-blue-600 dark:text-blue-400 ">
+                                    MMA
+                                </a>
+                                <h2 class="mt-1 mb-3 text-lg font-semibold text-gray-600 dark:text-gray-400 ">
+                                    10 MMA Players Who Can Be Big Star in Future | Maycee Kaye Barber & Others
+                                </h2>
+                                <div class="flex flex-wrap items-center">
+                                    <a href="#"
+                                        class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">
+                                            Admin</span>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">May
+                                            10, 2022</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="grid grid-cols-1 mb-6 md:grid-cols-[1fr,70%]  gap-4">
+                            <div>
+                                <img src="https://i.postimg.cc/hPP6wcrF/khamzat-chimaev-highlights-training-workouts-bio-knockouts.jpg"
+                                    alt="" class="object-cover w-full rounded-md h-80 md:h-44">
+                            </div>
+                            <div>
+                                <a href="#" class="text-xs font-medium text-blue-600 dark:text-blue-400 ">
+                                    MMA
+                                </a>
+                                <h2 class="mt-1 mb-3 text-lg font-semibold text-gray-600 dark:text-gray-400 ">
+                                    Five Facts About MMA Star Nick Diaz | Is Nick Planning to Return to the UFC?</h2>
+                                <div class="flex flex-wrap items-center">
+                                    <a href="#"
+                                        class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400 ">
+                                            Admin</span>
+                                    </a>
+                                    <a href="#"
+                                        class="flex items-center mr-6 text-gray-500 no-underline dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">May
+                                            10, 2022</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="h-full lg:flex">
+                        <div class="top-0 self-end mb-3 lg:sticky">
+                            <div class="p-4 border border-gray-200 dark:border-gray-800">
+                                <h2
+                                    class="pl-2 mb-6 text-lg text-gray-700 border-l-4 border-blue-500 dark:text-gray-400">
+                                    Popular</h2>
+                                <div class="flex w-full mb-4 ">
+                                    <div>
+                                        <img class="object-cover w-24 h-24 mr-4 rounded"
+                                            src="https://i.postimg.cc/7PK2b0Wd/francis-ngannou-1642942561.jpg" alt="">
+                                    </div>
+                                    <div class="flex-1 mb-5">
+                                        <h2
+                                            class="mb-4 text-base font-medium tracking-tight text-gray-700 hover:text-blue-600 dark:text-gray-400">
+                                            <a href="#">
+                                                Khamzat Chimaev vs. Leon Edwards Fight Analysis, Callouts
+                                            </a>
+                                        </h2>
+                                        <a href="#" class="flex items-center mr-6 text-gray-500 no-underline ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                                </path>
+                                            </svg>
+                                            <span class="ml-2 text-xs text-gray-500 ">May
+                                                10, 2022</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex w-full mb-4 ">
+                                    <div>
+                                        <img class="object-cover w-24 h-24 mr-4 rounded"
+                                            src="https://i.postimg.cc/J4RYwG6P/2022-fifa-world-cup-qatar-1653380693.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="flex-1 mb-5">
+                                        <h2
+                                            class="mb-4 text-base font-medium tracking-tight text-gray-700 hover:text-blue-600 dark:text-gray-400">
+                                            <a href="#">
+                                                Khamzat Chimaev vs. Leon Edwards Fight Analysis, Callouts
+                                            </a>
+                                        </h2>
+                                        <a href="#" class="flex items-center mr-6 text-gray-500 no-underline ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                                </path>
+                                            </svg>
+                                            <span class="ml-2 text-xs text-gray-500 ">May
+                                                10, 2022</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex w-full mb-4 ">
+                                    <div>
+                                        <img class="object-cover w-24 h-24 mr-4 rounded"
+                                            src="https://i.postimg.cc/cJQgR4R8/qatar-national-team-1653935295.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="flex-1 mb-5">
+                                        <h2
+                                            class="mb-4 text-base font-medium tracking-tight text-gray-700 hover:text-blue-600 dark:text-gray-400">
+                                            <a href="#">
+                                                Khamzat Chimaev vs. Leon Edwards Fight Analysis, Callouts
+                                            </a>
+                                        </h2>
+                                        <a href="#" class="flex items-center mr-6 text-gray-500 no-underline ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                                </path>
+                                            </svg>
+                                            <span class="ml-2 text-xs text-gray-500 ">May
+                                                10, 2022</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex w-full mb-4 ">
+                                    <div>
+                                        <img class="object-cover w-24 h-24 mr-4 rounded"
+                                            src="https://i.postimg.cc/6pC5Sbyk/saudi-arabia-national-football-team-1654021435.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="flex-1 mb-5">
+                                        <h2
+                                            class="mb-4 text-base font-medium tracking-tight text-gray-700 hover:text-blue-600 dark:text-gray-400">
+                                            <a href="#">
+                                                Saudi Arabia National Team 2022 FIFA World Cup
+                                            </a>
+                                        </h2>
+                                        <a href="#" class="flex items-center mr-6 text-gray-500 no-underline ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                                </path>
+                                            </svg>
+                                            <span class="ml-2 text-xs text-gray-500 ">May
+                                                10, 2022</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex w-full ">
+                                    <div>
+                                        <img class="object-cover w-24 h-24 mr-4 rounded"
+                                            src="https://i.postimg.cc/mr2kHNgK/tyreek-anthony-magee-1662813434.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="flex-1 mb-5">
+                                        <h2
+                                            class="mb-4 text-base font-medium tracking-tight text-gray-700 hover:text-blue-600 dark:text-gray-400">
+                                            <a href="#">
+                                                Khamzat Chimaev vs. Leon Edwards Fight Analysis, Callouts
+                                            </a>
+                                        </h2>
+                                        <a href="#" class="flex items-center mr-6 text-gray-500 no-underline ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                                </path>
+                                            </svg>
+                                            <span class="ml-2 text-xs text-gray-500 ">May
+                                                10, 2022</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+
+</html>
